@@ -13,16 +13,19 @@ body {
 	list-style: none;
 	height: 350px;
 	padding: 40px;
-	background-color: #f5e5bb;
+	background: linear-gradient(#f5e5bb, white);
 	color: darkslateblue;
 	text-align: center;
 	border: 2px solid darkslateblue;
+	border-radius: 7px;
+	box-shadow: 0px 5px 7px
 
 }
 
 .card:hover{
 	animation: bounce 0.5s linear;
 	cursor: pointer;
+	box-shadow: 0px 1px 2px
 }
 
 @keyframes bounce {
@@ -56,6 +59,12 @@ body {
 
 .card-image{
 	height: 180px;
+	border-style: solid;
+  	border-width: 2px;
+	padding: 30px;
+	border-radius: 7px;
+	background: linear-gradient(to bottom right, blue, pink);
+	
 
 }
 
