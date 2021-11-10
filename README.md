@@ -1,5 +1,7 @@
 # building-a-pokedex
 Pokedex with Vanilla HTML, CSS, and JavaScript
+[![Netlify Status](https://api.netlify.com/api/v1/badges/6123562f-c3bd-4a29-bb1f-f99332f6eb54/deploy-status)](https://app.netlify.com/sites/mai-pokedex/deploys)
+
 https://www.youtube.com/watch?v=T-VQUKeSU1w&t=25s
 
 created files using Create Web Boilerplate
