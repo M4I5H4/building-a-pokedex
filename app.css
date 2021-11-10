@@ -1,6 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
 body {
+	background-color: orangered;
 	margin: 0;
-	padding: 0;
-	color: blue;
+	font-family: 'Comic Neue';
+	color: #f5e5bb;
 }
+
+.card {
+	list-style: none;
+	padding: 40px;
+	background-color: #f5e5bb;
+	color: darkslateblue;
+	text-align: center;
+}
+
+.card:hover{
+	animation: bounce 0.5s linear;
+}
+
+@keyframes bounce {
+20%{
+	transform: translateY(-6px);
+}
+40%{
+	transform: translateY(0px);
+}
+60%{
+	transform: translateY(-2px);
+}
+80%{
+	transform: translateY(0px);
+}
+}
+
+
+.card-title{
+	text-transform: uppercase;
+	font-size: 200%;
+	font-weight: normal;
+	margin-bottom: 0;
+}
+
+.card-subtitle{
+	font-weight: lighter;
+	color: black;
+	margin-top: 0;
+
+}
+
+.card-image{
+	height: 180px;
+
+}
+
+#pokedex {
+	padding-inline: 0;
+	/* stops there being a margin allows cards to take up full screen */
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+	/* makes the cards spread equally over the page and is responsive  - becasue each card is set 
+	to 320px it will grid based on that number */
+	grid-gap: 20px;	
+}
+
+.container{
+	padding: 40px;
+	margin: 0 auto;
+
+}
+
+h1{
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 54px;
+
+}
+
 		
