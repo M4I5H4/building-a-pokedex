@@ -1,5 +1,5 @@
 const pokedex = document.getElementById("pokedex");
-
+const pokeCache = {}
 console.log(pokedex);
 //this is the fucntion to get the pokemon
 const fetchPokemon = async () => {
@@ -51,11 +51,14 @@ const displayPokemon = (pokemon) => {
     pokedex.innerHTML = pokemonHTMLString;
 }
 const selectPokemon = async (id) => {
+    if (!pokeCache[id]){
     const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
     const res = await fetch(url);
     const pokeman = await res.json();
+    pokeCache[id] = pokeman
     displayPopup(pokeman);
-
+    }
+    displayPopup(pokeCache[id]);
 }
 
 const displayPopup = (pokeman) => {
