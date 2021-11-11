@@ -15,11 +15,12 @@ const fetchPokemon = async () => {
         
 
     }))
-  
+  //filter for searching pokemon
+  //toUpperCase makes it case insensative meaning that it will give results regardless of lower or upper case
 searchBar.addEventListener('keyup', (e) => {
-    const searchString = e.target.value;
+    const searchString = e.target.value.toUpperCase();
     const filteredPokemon = pokemon.filter((pokemon) => {
-        return pokemon.name.includes(searchString)
+        return pokemon.name.toUpperCase().includes(searchString)
     });
 displayPokemon(filteredPokemon)
 });
