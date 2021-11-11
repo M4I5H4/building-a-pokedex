@@ -1,10 +1,11 @@
 const pokedex = document.getElementById("pokedex");
+const searchBar = document.getElementById('searchBar');
+
 const pokeCache = {}
 console.log(pokedex);
 //this is the fucntion to get the pokemon
 const fetchPokemon = async () => {
-    const url = `https://pokeapi.co/api/v2/pokemon?limit=150`;
-    const res = await fetch(url);
+    const res = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=150`);
     const data = await res.json();
     const pokemon = data.results.map((result, index)=> ({
         
@@ -14,6 +15,14 @@ const fetchPokemon = async () => {
         
 
     }))
+  
+searchBar.addEventListener('keyup', (e) => {
+    const searchString = e.target.value;
+    const filteredPokemon = pokemon.filter((pokemon) => {
+        return pokemon.name.includes(searchString)
+    });
+displayPokemon(filteredPokemon)
+});
     displayPokemon(pokemon)
 };
 

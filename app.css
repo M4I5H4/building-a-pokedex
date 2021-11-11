@@ -7,8 +7,18 @@ body {
 }
 .sub-header{
 	text-align: center;
-	font-size: 25px;
+	font-size: 25px;}
+
+#searchBar {
+	width: 50%;
+	height: 32px;		
+	border-radius: 3px;
+	border: 1px solid;
+	font-size: 1em;
+	
 }
+	
+	
 .card {
 	list-style: none;
 	height: 400px;
