@@ -8,8 +8,7 @@ const fetchPokemon = async () => {
     const res = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=150`);
     const data = await res.json();
     const pokemon = data.results.map((result, index)=> ({
-        
-      ...result, //instead of name: data.name
+        ...result, //instead of name: data.name
         id: index + 1,
         image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png`,
         
