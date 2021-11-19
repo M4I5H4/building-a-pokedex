@@ -1,6 +1,22 @@
 const pokedex = document.getElementById("pokedex");
 const searchBar = document.getElementById('searchBar');
 
+// navigation bar toggle
+const navToggle = document.querySelector(".nav-toggle");
+const navLinks = document.querySelectorAll(".nav__link");
+
+navToggle.addEventListener("click", () => {
+  document.body.classList.toggle("nav-open");
+});
+
+navLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    document.body.classList.remove("nav-open");
+  });
+});
+// navigation bar toggle
+
+
 const pokeCache = {}
 console.log(pokedex);
 //this is the fucntion to get the pokemon
