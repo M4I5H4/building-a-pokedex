@@ -1,9 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
+
+:root {
+	--clr-bg: orangered;
+	--clr-text: #f5e5bb;
+	--clr-accent: darkslateblue;
+}
+
+
+
+
 body {
-	background-color: orangered;
+	background-color: var(--clr-bg);
 	margin: 0;
 	font-family: 'Comic Neue';
-	color: #f5e5bb;
+	color: var(--clr-text);
 }
 /* navigation hamburger and  toggle */
 header {
@@ -14,8 +24,8 @@ header {
 
 	.nav {
 		position: fixed;
-		background: #f5e5bb;
-		color: orangered;
+		background: var(--clr-text);
+		color: var(--clr-bg);
 		top: 0;
 		bottom: 0;
 		left: 0;
@@ -46,7 +56,7 @@ header {
 	  }
 	  
 	  .nav__link:hover {
-		color: red;
+		color: var(--clr-accent);
 	  }
 	  
 	  .nav-toggle {
@@ -71,9 +81,9 @@ header {
 	  .nav-open .hamburger {
 		transform: rotate(0.625turn);
 	  }
-	  
+	  /* credates X shape transiton */
 	  .nav-open .hamburger::before {
-		transform: rotate(90deg) translateX(-6px);
+		transform: rotate(90deg) translateX(-8px);
 	  }
 	  
 	  .nav-open .hamburger::after {
@@ -88,9 +98,9 @@ header {
 	  .hamburger,
 	  .hamburger::before,
 	  .hamburger::after {
-		background: white;
+		background: var(--clr-accent);
 		width: 2em;
-		height: 3px;
+		height: 4px;
 		border-radius: 1em;
 		transition: transform 250ms ease-in-out;
 	  }
@@ -104,10 +114,10 @@ header {
 	  }
 	  
 	  .hamburger::before {
-		top: 6px;
+		top: 8px;
 	  }
 	  .hamburger::after {
-		bottom: 6px;
+		bottom: 8px;
 	  }
 /* navigation hamburger and  toggle */	  
 
@@ -129,10 +139,10 @@ header {
 	list-style: none;
 	height: 400px;
 	padding: 40px;
-	background: linear-gradient(#f5e5bb, white);
-	color: darkslateblue;
+	background: linear-gradient(var(--clr-text), white);
+	color: var(--clr-accent);
 	text-align: center;
-	border: 2px solid darkslateblue;
+	border: 2px solid var(--clr-accent);
 	border-radius: 7px;
 	box-shadow: 0px 5px 7px
 
@@ -213,8 +223,8 @@ h1{
 	left: 0;
 	height: 100vh;
 	width: 100vw;
-background-color: blanchedalmond;
-opacity: 0.95;
+background-color: var(--clr-text);
+opacity: 1;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -222,11 +232,11 @@ align-items: center;
 
 #closeBtn{
 	position: absolute;
-	top: 20px;
-	right: 20px;
+	top: 60px;
+	right: 500px;
 }
  button{
-	 background-color: orangered;
+	 background-color: var(--clr-bg);
 	 padding: 10px 20px;
 	 border: none;
 	 color: white;

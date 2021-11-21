@@ -1,7 +1,7 @@
 const pokedex = document.getElementById("pokedex");
 const searchBar = document.getElementById('searchBar');
 
-// navigation bar toggle
+// navigation bar toggle start
 const navToggle = document.querySelector(".nav-toggle");
 const navLinks = document.querySelectorAll(".nav__link");
 
@@ -14,22 +14,22 @@ navLinks.forEach((link) => {
     document.body.classList.remove("nav-open");
   });
 });
-// navigation bar toggle
+// navigation bar toggle end
 
 
 const pokeCache = {}
 console.log(pokedex);
-//this is the fucntion to get the pokemon
+//this is the fucntion to get the 151 characters from the API
 const fetchPokemon = async () => {
-    const res = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=150`);
+    const res = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=151`);
     const data = await res.json();
     const pokemon = data.results.map((result, index)=> ({
         ...result, //instead of name: data.name
         id: index + 1,
-        image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png`,
+        image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png`, //calls specific image from API
         
-
     }))
+    
   //filter for searching pokemon
   //toUpperCase makes it case insensative meaning that it will give results regardless of lower or upper case
 searchBar.addEventListener('keyup', (e) => {
@@ -61,7 +61,7 @@ displayPokemon(filteredPokemon)
     // }));
     //     displayPokemon(pokemon)
     //     });
-
+//displays chracters on the main list of cards but also had the on click function for when the modal is set to open
 const displayPokemon = (pokemon) => {
     const pokemonHTMLString = pokemon
     .map(
@@ -75,17 +75,20 @@ const displayPokemon = (pokemon) => {
         .join('');
     pokedex.innerHTML = pokemonHTMLString;
 }
+
+//suposed to hold ID infomation of the character if already clicked
 const selectPokemon = async (id) => {
     if (!pokeCache[id]){
     const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
     const res = await fetch(url);
     const pokeman = await res.json();
-    pokeCache[id] = pokeman
+    // pokeCache[id] = pokeman
     displayPopup(pokeman);
     }
     displayPopup(pokeCache[id]);
 }
 
+//displays the infomation on the cards on the modal pop up
 const displayPopup = (pokeman) => {
    
     const type = pokeman.types.map(type => type.type.name)
@@ -108,7 +111,7 @@ pokedex.innerHTML = htmlString + pokedex.innerHTML;
 console.log(htmlString)
 
 }
-
+//removes the modalpop up
 const closePopup = () => {
     const popup = document.querySelector('.popup');
     popup.parentElement.removeChild(popup);
