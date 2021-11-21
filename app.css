@@ -1,13 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
-
+/* custom properties  */
 :root {
 	--clr-bg: orangered;
 	--clr-text: #f5e5bb;
 	--clr-accent: darkslateblue;
 }
-
-
-
 
 body {
 	background-color: var(--clr-bg);
@@ -232,8 +229,8 @@ align-items: center;
 
 #closeBtn{
 	position: absolute;
-	top: 60px;
-	right: 500px;
+	top: 30px;
+	right: 40px;
 }
  button{
 	 background-color: var(--clr-bg);
